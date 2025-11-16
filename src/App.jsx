@@ -3,7 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { socket } from "./socket"
 import Admin from "./Admin";
 
-const socket = io("http://localhost:3000", {
+const socket = io("https://chocbear.onrender.com", {
   transports: ["websocket"],
   autoConnect: true,
 });
