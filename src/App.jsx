@@ -1,6 +1,6 @@
 // src/App.jsx
 import React, { useEffect, useState, useRef } from "react";
-import { socket } from "./socket"
+import io from "socket.io-client";
 import Admin from "./Admin";
 
 const socket = io("https://chocbear.onrender.com", {
