@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 기본 폰트 및 다크모드 대비 설정 */
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #121212;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #121212;
+}
+/* ====== BUTTON COLOR SET ====== */
+.btn-blue {
+  @apply bg-blue-600 hover:bg-blue-500 text-white font-semibold py-2 rounded-xl;
+}
+
+.btn-green {
+  @apply bg-emerald-600 hover:bg-emerald-500 text-white font-semibold py-2 rounded-xl;
+}
+
+.btn-yellow {
+  @apply bg-amber-500 hover:bg-amber-400 text-black font-semibold py-2 rounded-xl;
+}
+
+.btn-red {
+  @apply bg-rose-600 hover:bg-rose-500 text-white font-semibold py-2 rounded-xl;
+}
+
+.btn-purple {
+  @apply bg-purple-600 hover:bg-purple-500 text-white font-semibold py-2 rounded-xl w-full;
+}
