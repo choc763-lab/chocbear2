@@ -8,6 +8,7 @@ const socket = io("https://chocbear.onrender.com", {
   autoConnect: true,
 });
 
+
 function App() {
   const [teams, setTeams] = useState([]);
   const [players, setPlayers] = useState([]);
