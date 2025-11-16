@@ -48,31 +48,32 @@ function Admin({ teams, players, emit, maxPlayersPerTeam }) {
   // IMAGE UPLOAD
   // ======================================================
   const uploadImage = async (file, type, id) => {
-    if (!file) return;
+  if (!file) return;
 
-    const formData = new FormData();
-    formData.append("image", file);
+  const formData = new FormData();
+  formData.append("image", file);
 
-    try {
-      const res = await fetch("http://localhost:3000/upload", {
-        method: "POST",
-        body: formData,
-      });
+  try {
+    const res = await fetch("https://chocbear.onrender.com/upload", {
+      method: "POST",
+      body: formData,
+    });
 
-      const data = await res.json();
-      if (!data.url) return alert("업로드 실패!");
+    const data = await res.json();
+    if (!data.url) return alert("업로드 실패!");
 
-      const url = data.url.startsWith("http")
-        ? data.url
-        : `http://localhost:3000${data.url}`;
+    // Render 서버 기준 URL 생성
+    const url = data.url.startsWith("http")
+      ? data.url
+      : `https://chocbear.onrender.com${data.url}`;
 
-      if (type === "team") updateTeamField(id, "logo", url);
-      else updatePlayerField(id, "image", url);
-    } catch (e) {
-      console.log(e);
-      alert("이미지 업로드 실패");
-    }
-  };
+    if (type === "team") updateTeamField(id, "logo", url);
+    else updatePlayerField(id, "image", url);
+  } catch (e) {
+    console.log(e);
+    alert("이미지 업로드 실패");
+  }
+};
 
   // ======================================================
   // TEAM ADD / DELETE
